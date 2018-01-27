@@ -42,9 +42,10 @@ SL.hal9001 <- function(Y,
 
   # if (family$family == "gaussian") {
     # fit HAL
+    # browser()
     hal_out <- fit_hal(Y = Y, X = X, degrees = degrees, fit_type = fit_type,
                        n_folds = n_folds, use_min = use_min, yolo = FALSE,
-                       weights = obsWeights, ...)
+                       weights = obsWeights)
 
     # compute predictions based on `newX` or input `X`
     if(!is.null(newX)) {
