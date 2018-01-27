@@ -33,17 +33,18 @@ SL.hal9001 <- function(Y,
                        X,
                        newX = NULL,
                        degrees = NULL,
-                       fit_type = c("origami", "glmnet"),
+                       fit_type = c("glmnet"),
                        n_folds = 10,
                        use_min = TRUE,
                        family = stats::gaussian(),
                        obsWeights = rep(1, length(Y)),
                        ...) {
 
-  if (family$family == "gaussian") {
+  # if (family$family == "gaussian") {
     # fit HAL
     hal_out <- fit_hal(Y = Y, X = X, degrees = degrees, fit_type = fit_type,
-                       n_folds = n_folds, use_min = use_min, yolo = FALSE)
+                       n_folds = n_folds, use_min = use_min, yolo = FALSE,
+                       weights = obsWeights, ...)
 
     # compute predictions based on `newX` or input `X`
     if(!is.null(newX)) {
@@ -57,11 +58,11 @@ SL.hal9001 <- function(Y,
     out <- list(pred = pred, fit = fit)
     class(out$fit) <- "SL.hal9001"
     return(out)
-  }
+  # }
 
-  if (family$family == "binomial") {
-    stop("Only Gaussian error family currently supported with HAL9001")
-  }
+  # if (family$family == "binomial") {
+  #   stop("Only Gaussian error family currently supported with HAL9001")
+  # }
 }
 
 ################################################################################
