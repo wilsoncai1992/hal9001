@@ -128,7 +128,9 @@ fit_hal <- function(X,
               copy_map = copy_map,
               coefs = coefs,
               times = times,
-              lambda_star = lambda_star)
+              lambda_star = lambda_star,
+              lambda_grid = hal_lasso$lambda
+              )
   class(fit) <- "hal9001"
   return(fit)
 }
