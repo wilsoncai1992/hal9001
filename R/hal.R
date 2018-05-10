@@ -235,6 +235,7 @@ fit_hal_single_lambda <- function(X,
 
   } else if (fit_type == "glmnet") {
     # just use the standard implementation available in glmnet
+    # ... is where is manual lambda input is in
     hal_lasso <- glmnet::glmnet(x = x_basis, y = Y, ...)
     lambda_star <- hal_lasso$lambda
     coefs <- stats::coef(hal_lasso)
