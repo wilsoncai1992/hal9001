@@ -298,7 +298,7 @@ fit_hal_constraint_form <- function(X,
                     Y,
                     degrees = NULL,
                     fit_type = c("origami", "glmnet"),
-                    n_folds = 2,
+                    n_folds = 3,
                     M = NULL,
                     ...,
                     yolo = TRUE) {

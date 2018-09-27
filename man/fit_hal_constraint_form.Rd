@@ -5,7 +5,7 @@
 \title{WILSON constraint form}
 \usage{
 fit_hal_constraint_form(X, Y, degrees = NULL, fit_type = c("origami",
-  "glmnet"), n_folds = 2, M = NULL, ..., yolo = TRUE)
+  "glmnet"), n_folds = 3, M = NULL, ..., yolo = TRUE)
 }
 \arguments{
 \item{X}{An input \code{matrix} containing observations and covariates
