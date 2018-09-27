@@ -5,7 +5,7 @@
 \title{WILSON constraint form}
 \usage{
 fit_hal_constraint_form(X, Y, degrees = NULL, fit_type = c("origami",
-  "glmnet"), n_folds = 10, use_min = TRUE, M = NULL, ..., yolo = TRUE)
+  "glmnet"), n_folds = 2, M = NULL, ..., yolo = TRUE)
 }
 \arguments{
 \item{X}{An input \code{matrix} containing observations and covariates
@@ -26,10 +26,6 @@ a (faster) call to a custom routine based on the \code{origami} package.}
 \item{n_folds}{Integer for the number of folds to be used when splitting the
 data for cross-validation. This defaults to 10 as this is the convention for
 v-fold cross-validation.}
-
-\item{use_min}{Determines which lambda is selected from \code{cv.glmnet}.
-\code{TRUE} corresponds to \code{"lambda.min"} and \code{FALSE} corresponds
-to \code{"lambda.1se"}.}
 
 \item{...}{Other arguments passed to \code{cv.glmnet}. Please consult the
 documentation for \code{glmnet} for a full list of options.}
