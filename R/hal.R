@@ -346,7 +346,7 @@ fit_hal_constraint_form <- function(X,
     l1_norm[l1_norm > M] <- NaN # exclude comparison
     M_candidate <- which.max(l1_norm)
     # corner case when all lambda candidates are larger than M
-    if (length(M_candidate) == 0) M_candidate <- 1
+    if (length(M_candidate) == 0) M_candidate <- which.min(l1_norms)
     lambda_star <- hal_lasso$lambda[M_candidate]
     coefs <- as.matrix(coefss[, M_candidate])
   }
