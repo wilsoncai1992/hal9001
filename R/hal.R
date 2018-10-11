@@ -131,6 +131,7 @@ fit_hal <- function(X,
               lambda_star = lambda_star,
               lambda_grid = hal_lasso$lambda
               )
+  fit$hal_lasso <- hal_lasso
   class(fit) <- "hal9001"
   return(fit)
 }
@@ -248,6 +249,7 @@ fit_hal_single_lambda <- function(X,
               coefs = coefs,
               times = times,
               lambda_star = lambda_star)
+  fit$hal_lasso <- hal_lasso
   class(fit) <- "hal9001"
   return(fit)
 }
@@ -374,6 +376,7 @@ fit_hal_constraint_form <- function(X,
               lambda_grid = hal_lasso$lambda,
               l1_norms = l1_norms # wilson debug
               )
+  fit$hal_lasso <- hal_lasso
   class(fit) <- "hal9001"
   return(fit)
 }
